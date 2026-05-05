@@ -1,0 +1,320 @@
+TABLAS DE INTERÉS PARA EL SISTEMA DE SOPORTE
+================================================================================
+
+
+OWNER: BEAN | TABLE: AGREEMENTS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: POLIZAS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: ASEGURADOS
+------------------------------------------------------------
+
+Columnas (11):
+  SSEGURO | NUMBER | len=22 | null=Y | default=None
+  SPERSON | NUMBER | len=22 | null=Y | default=None
+  NORDEN | NUMBER | len=22 | null=Y | default=None
+  CDOMICI | NUMBER | len=22 | null=Y | default=None
+  FFECINI | DATE | len=7 | null=Y | default=None
+  FFECFIN | DATE | len=7 | null=Y | default=None
+  FFECMUE | DATE | len=7 | null=Y | default=None
+  NRIESGO | NUMBER | len=22 | null=Y | default=1
+  FECRETROACT | DATE | len=7 | null=Y | default=None
+  NORDENINC | NUMBER | len=22 | null=Y | default=None
+  PRINCIPAL | NUMBER | len=22 | null=Y | default=None
+
+Total de filas: 16,466
+
+OWNER: BEAN | TABLE: PRODUCTOS
+------------------------------------------------------------
+
+Columnas (108):
+  CTIPSEG | NUMBER | len=22 | null=Y | default=None
+  CCOLECT | NUMBER | len=22 | null=Y | default=None
+  CRAMO | NUMBER | len=22 | null=Y | default=None
+  CMODALI | NUMBER | len=22 | null=Y | default=None
+  CAGRPRO | NUMBER | len=22 | null=Y | default=None
+  CSUBPRO | NUMBER | len=22 | null=Y | default=None
+  CACTIVO | NUMBER | len=22 | null=Y | default=None
+  CTIPREB | NUMBER | len=22 | null=Y | default=None
+  CTIPGES | NUMBER | len=22 | null=Y | default=None
+  CRECCOB | NUMBER | len=22 | null=Y | default=None
+  CTIPPAG | NUMBER | len=22 | null=Y | default=None
+  CPAGDEF | NUMBER | len=22 | null=Y | default=None
+  CDURACI | NUMBER | len=22 | null=Y | default=None
+  CTEMPOR | NUMBER | len=22 | null=Y | default=None
+  CTARMAN | NUMBER | len=22 | null=Y | default=None
+  CTIPEFE | NUMBER | len=22 | null=Y | default=None
+  CGARSIN | NUMBER | len=22 | null=Y | default=None
+  CVALMAN | NUMBER | len=22 | null=Y | default=None
+  CTIPRIE | NUMBER | len=22 | null=Y | default=None
+  CVALFIN | NUMBER | len=22 | null=Y | default=None
+  COBJASE | NUMBER | len=22 | null=Y | default=None
+  CPROTEC | NUMBER | len=22 | null=Y | default=None
+  SCLABEN | NUMBER | len=22 | null=Y | default=None
+  NEDAMIC | NUMBER | len=22 | null=Y | default=None
+  NEDAMAC | NUMBER | len=22 | null=Y | default=None
+  NEDAMAR | NUMBER | len=22 | null=Y | default=None
+  PINTTEC | NUMBER | len=22 | null=Y | default=None
+  PGASINT | NUMBER | len=22 | null=Y | default=None
+  PGASEXT | NUMBER | len=22 | null=Y | default=None
+  IPRIMIN | NUMBER | len=22 | null=Y | default=None
+  NDURCOB | NUMBER | len=22 | null=Y | default=None
+  CRECFRA | NUMBER | len=22 | null=Y | default=None
+  CRETENI | NUMBER | len=22 | null=Y | default=None
+  CIMPPRI | NUMBER | len=22 | null=Y | default=None
+  CIMPTAX | NUMBER | len=22 | null=Y | default=None
+  CIMPCON | NUMBER | len=22 | null=Y | default=None
+  CCUESTI | NUMBER | len=22 | null=Y | default=None
+  CTIPCAL | NUMBER | len=22 | null=Y | default=None
+  CIMPEFE | NUMBER | len=22 | null=Y | default=None
+  CMODELO | VARCHAR2 | len=10 | null=Y | default=None
+  CCALCOM | NUMBER | len=22 | null=Y | default=None
+  CREASEG | NUMBER | len=22 | null=Y | default=None
+  PREVALI | NUMBER | len=22 | null=Y | default=None
+  IREVALI | NUMBER | len=22 | null=Y | default=None
+  CREVALI | NUMBER | len=22 | null=Y | default=None
+  CRAMDGS | NUMBER | len=22 | null=Y | default=None
+  CTIPIMP | NUMBER | len=22 | null=Y | default=None
+  CREVFPG | NUMBER | len=22 | null=Y | default=None
+  CMOVDOM | NUMBER | len=22 | null=Y | default=None
+  SPRODUC | NUMBER | len=22 | null=Y | default=None
+  CCTACOR | NUMBER | len=22 | null=Y | default=0
+  CVINPOL | NUMBER | len=22 | null=Y | default=0
+  CDIVISA | NUMBER | len=22 | null=Y | default=2
+  CTIPREN | NUMBER | len=22 | null=Y | default=None
+  CCLAREN | NUMBER | len=22 | null=Y | default=None
+  NNUMREN | NUMBER | len=22 | null=Y | default=None
+  CPARBEN | NUMBER | len=22 | null=Y | default=None
+  CIEDMAC | NUMBER | len=22 | null=Y | default=0
+  CIEDMIC | NUMBER | len=22 | null=Y | default=0
+  CIEDMAR | NUMBER | len=22 | null=Y | default=0
+  NSEDMAC | NUMBER | len=22 | null=Y | default=None
+  CISEMAC | NUMBER | len=22 | null=Y | default=0
+  PGAEXIN | NUMBER | len=22 | null=Y | default=None
+  PGAEXEX | NUMBER | len=22 | null=Y | default=None
+  CPRPROD | NUMBER | len=22 | null=Y | default=None
+  NVTOMAX | NUMBER | len=22 | null=Y | default=None
+  NVTOMIN | NUMBER | len=22 | null=Y | default=None
+  CDURMAX | NUMBER | len=22 | null=Y | default=None
+  CLIGACT | NUMBER | len=22 | null=Y | default=None
+  CPA1REN | NUMBER | len=22 | null=Y | default=None
+  NPA1REN | NUMBER | len=22 | null=Y | default=None
+  TPOSIAN | VARCHAR2 | len=13 | null=Y | default=None
+  CIEMA2C | NUMBER | len=22 | null=Y | default=None
+  CIEMI2C | NUMBER | len=22 | null=Y | default=None
+  CIEMA2R | NUMBER | len=22 | null=Y | default=None
+  NEDMA2C | NUMBER | len=22 | null=Y | default=None
+  NEDMI2C | NUMBER | len=22 | null=Y | default=None
+  NEDMA2R | NUMBER | len=22 | null=Y | default=None
+  SCUECAR | NUMBER | len=22 | null=Y | default=None
+  CPRORRA | NUMBER | len=22 | null=Y | default=None
+  CCOMPANI | NUMBER | len=22 | null=Y | default=None
+  CPRIMIN | NUMBER | len=22 | null=Y | default=None
+  CCLAPRI | NUMBER | len=22 | null=Y | default=None
+  CVINPRE | NUMBER | len=22 | null=Y | default=None
+  CDURMIN | NUMBER | len=22 | null=Y | default=None
+  IPMINFRA | NUMBER | len=22 | null=Y | default=None
+  NDIASPRO | NUMBER | len=22 | null=Y | default=None
+  NRENOVA | NUMBER | len=22 | null=Y | default=None
+  NMAXRIE | NUMBER | len=22 | null=Y | default=None
+  CSUFIJO | CHAR | len=2 | null=Y | default=None
+  CFECCOB | NUMBER | len=22 | null=Y | default=None
+  NNUMPAG | NUMBER | len=22 | null=Y | default=None
+  NRECREN | NUMBER | len=22 | null=Y | default=None
+  IMINEXT | NUMBER | len=22 | null=Y | default=None
+  CCARPEN | NUMBER | len=22 | null=Y | default=None
+  CSINDEF | NUMBER | len=22 | null=Y | default=None
+  CTIPRES | NUMBER | len=22 | null=Y | default=None
+  NNIGGAR | NUMBER | len=22 | null=Y | default=1
+  NNIIGAR | NUMBER | len=22 | null=Y | default=None
+  NPARBEN | NUMBER | len=22 | null=Y | default=None
+  NBNS | NUMBER | len=22 | null=Y | default=None
+  CTRAMO | NUMBER | len=22 | null=Y | default=None
+  CAGRCON | NUMBER | len=22 | null=Y | default=None
+  CMODNRE | NUMBER | len=22 | null=Y | default=1
+  CTERMFIN | NUMBER | len=22 | null=Y | default=0
+  CMODINT | NUMBER | len=22 | null=Y | default=0
+  CINTREV | NUMBER | len=22 | null=Y | default=0
+  CPREAVISO | NUMBER | len=22 | null=Y | default=None
+
+Total de filas: 15
+
+OWNER: BEAN | TABLE: SINIESTROS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: PAGOS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: CLIENTES
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: CONTRATOS
+------------------------------------------------------------
+
+Columnas (41):
+  SCONTRA | NUMBER | len=22 | null=Y | default=None
+  NVERSIO | NUMBER | len=22 | null=Y | default=None
+  NPRIORI | NUMBER | len=22 | null=Y | default=None
+  FCONINI | DATE | len=7 | null=Y | default=None
+  NCONREL | NUMBER | len=22 | null=Y | default=None
+  FCONFIN | DATE | len=7 | null=Y | default=None
+  IAUTORI | NUMBER | len=22 | null=Y | default=None
+  IRETENC | NUMBER | len=22 | null=Y | default=None
+  IMINCES | NUMBER | len=22 | null=Y | default=None
+  ICAPACI | NUMBER | len=22 | null=Y | default=None
+  IPRIOXL | NUMBER | len=22 | null=Y | default=None
+  PPRIOSL | NUMBER | len=22 | null=Y | default=None
+  TCONTRA | VARCHAR2 | len=50 | null=Y | default=None
+  TOBSERV | VARCHAR2 | len=80 | null=Y | default=None
+  PCEDIDO | NUMBER | len=22 | null=Y | default=None
+  PRIESGOS | NUMBER | len=22 | null=Y | default=None
+  PDESCUENTO | NUMBER | len=22 | null=Y | default=None
+  PGASTOS | NUMBER | len=22 | null=Y | default=None
+  PPARTBENE | NUMBER | len=22 | null=Y | default=None
+  CREAFAC | NUMBER | len=22 | null=Y | default=None
+  PCESEXT | NUMBER | len=22 | null=Y | default=None
+  CGARREL | NUMBER | len=22 | null=Y | default=None
+  CFRECUL | NUMBER | len=22 | null=Y | default=None
+  SCONQP | NUMBER | len=22 | null=Y | default=None
+  NVERQP | NUMBER | len=22 | null=Y | default=None
+  IAGREGA | NUMBER | len=22 | null=Y | default=None
+  IMAXAGR | NUMBER | len=22 | null=Y | default=None
+  PDEPOSITO | NUMBER | len=22 | null=Y | default=None
+  CDETCES | NUMBER | len=22 | null=Y | default=None
+  CLAVECBR | NUMBER | len=22 | null=Y | default=None
+  CERCARTERA | NUMBER | len=22 | null=Y | default=None
+  NANYOSLOSS | NUMBER | len=22 | null=Y | default=None
+  CBASEXL | NUMBER | len=22 | null=Y | default=None
+  CLOSSCORRIDOR | NUMBER | len=22 | null=Y | default=None
+  CCAPPEDRATIO | NUMBER | len=22 | null=Y | default=None
+  SCONTRAPROT | NUMBER | len=22 | null=Y | default=None
+  CESTADO | NUMBER | len=22 | null=Y | default=None
+  NVERSIOPROT | NUMBER | len=22 | null=Y | default=None
+  IPRIMAESPERADAS | NUMBER | len=22 | null=Y | default=None
+  CTPREEST | NUMBER | len=22 | null=Y | default=1
+  PCOMEXT | NUMBER | len=22 | null=Y | default=None
+
+Total de filas: 146
+
+OWNER: BEAN | TABLE: COBERTURAS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: BENEFICIARIOS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: PAGOS_TRABAJADORES
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: PAGOS_INDEPENDIENTES
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: EMPRESAS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: TERCEROS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: SUCURSALES
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: AGENTES
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: RAMOS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: FORMAS_PAGO
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: ESTADOS
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/
+
+OWNER: BEAN | TABLE: TIPOS_DOCUMENTO
+------------------------------------------------------------
+
+Columnas (0):
+
+Error contando filas: ORA-00942: table or view does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/

@@ -1,0 +1,235 @@
+{
+  "name": "pg sipiriliiii",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -96,
+        -32
+      ],
+      "id": "45fd9eb8-74a2-43dd-93a0-57515b4918ee",
+      "name": "When chat message received",
+      "webhookId": "98907afc-3069-4484-bd93-5cbfcd2c3e9f"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{$json.chatInput}}",
+        "options": {
+          "systemMessage": "Eres el Asistente Técnico de Tronador. Tu misión es diagnosticar errores. Si al intentar usar la herramienta de Oracle recibes un error de timeout, conexión o 'NJS-510', NO te detengas. Ignora el fallo, asume que la regla está 'ACTIVA' y ejecuta inmediatamente la herramienta de GitHub para entregar el script de solución al usuario"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        112,
+        -32
+      ],
+      "id": "77dafe20-8887-4e9b-bce0-a66a2e306043",
+      "name": "AI Agent",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {
+          "maxOutputTokens": 2048,
+          "temperature": 0.1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -32,
+        176
+      ],
+      "id": "9e86c4c7-d44f-4889-a30f-9df7b9893b8a",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "2QWzyysxWabQFDp6",
+          "name": "Google Gemini(PaLM) Api account 11"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "adrianacorrea-sys",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "soportePrueba",
+          "mode": "name"
+        },
+        "filePath": "solucion_GD923_1099.txt",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        464,
+        -32
+      ],
+      "id": "22e89e0a-5638-45db-b520-4f5bb3481ef9",
+      "name": "Get a file",
+      "webhookId": "f29dcb04-49cc-4f17-9c35-7ce272714e73",
+      "credentials": {
+        "githubApi": {
+          "id": "15D5KCMj0JnoiTDz",
+          "name": "GitHub account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Esta es la herramienta oficial de consulta para la base de datos Oracle de Tronador. Úsala para leer información de cualquier tabla técnica o de negocio El agente debe generar sentencias SELECT precisas basadas en el esquema de la base de datos para diagnosticar errores reportados por los usuarios\n\n",
+        "operation": "execute",
+        "query": "{{ $fromAI('sql_query', 'The SQL query to execute') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.oracleDatabaseTool",
+      "typeVersion": 1,
+      "position": [
+        352,
+        192
+      ],
+      "id": "fdaf4d3a-1278-44e4-a606-ac02270480f4",
+      "name": "Execute SQL in Oracle Database",
+      "notesInFlow": true,
+      "credentials": {
+        "oracleDBApi": {
+          "id": "y9Z1lbfqEJla1PH4",
+          "name": "Oracle Database Credentials account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "sessionId"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        128,
+        176
+      ],
+      "id": "dbf4c7b6-af44-42cc-9d16-93eca32344fb",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "issueKey": "={{ $json.chatInput }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.jiraTool",
+      "typeVersion": 1,
+      "position": [
+        240,
+        336
+      ],
+      "id": "c4a46188-5ff2-408c-a9d0-f78c3347a739",
+      "name": "Get an issue in Jira Software",
+      "notesInFlow": true,
+      "credentials": {
+        "jiraSoftwareCloudApi": {
+          "id": "h7TCO2Q2iaCcBvJD",
+          "name": "Jira SW Cloud account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute SQL in Oracle Database": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get an issue in Jira Software": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "c24faac8-3ec6-4249-99b6-020b444f2ae8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f2c283d362d141b05e359b3876cfea9bbe01c3ff867490d0834116012ef1e8d7"
+  },
+  "id": "Ex80Hp8G10meRmbcBL4ZR",
+  "tags": []
+}
